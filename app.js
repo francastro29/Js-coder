@@ -1,126 +1,87 @@
-let nombreComprador;
-let primera__pantalla;
-let producto;
-let mensaje = 'ERROR';
 
-let prod__susp = 0;
-let prod__transm = 0;
-let prod__horq = 0;
-let prod__cuadro = 0;
-let prod = 0;
+// Bienvenida 
+alert("¡Bienvenido/a a la tienda de repuestos de Francisco Castro!");
 
-function comprar__prod(nombreComprador) {
+// Nombre
+let fullName = prompt("Ingrese su nombre completo");
 
-    let productos_tienda;
-    let suspension = '1';
-    let transmision = '2';
-    let horquilla = '3';
-    let cuadro = '4';
-    let salir = 'X';
+// Saludo
+alert(`Bienvenido/a ${fullName} a nuestra tienda`);
 
+const prodTienda = [
+    { producto: 1, precio: 1200000 },
+    { producto: 2, precio: 1350000 },
+    { producto: 3, precio: 2000000 },
+    { producto: 4, precio: 285000 }
+];
 
-    do {
-        productos_tienda = prompt(`${nombreComprador}, Bienvenido a la tienda de repuestos de Francisco` + '\n' +
-            '¿Que producto desea comprar?' + '\n' +
-            '1) Suspension' + '\n' +
-            '2) Transmision' + '\n' +
-            '3) Horquilla' + '\n' +
-            '4) Cuadro' + '\n' +
-            '\n' +
-            'Para salir presione X');
+let infoProdTienda = "Información sobre la tienda:\n";
 
-        if (productos_tienda !== suspension && productos_tienda !== transmision && productos_tienda !== horquilla && productos_tienda !== cuadro && productos_tienda !== salir) {
+for (const prod of prodTienda) {
+    infoProdTienda += `Producto: ${prod.producto} - Precio: ${prod.precio} pesos\n`;
+}
+alert(infoProdTienda);
 
-            alert('No existe');
+// Funciones
+function mostrarProdTienda() {
+    let mensaje = "Productos Disponibles:\n";
 
-        } else {
+    for (let i = 0; i < prodTienda.length; i++) {
+    mensaje += `${prodTienda[i].producto} - ${prodTienda[i].precio} pesos\n`;
+    } 
 
-            if (productos_tienda !== 'X') {
-                producto = productos_tienda;
-                prod++;
-
-                switch (producto) {
-
-                    case suspension:
-                        if (prod__susp == 0) {
-                            alert(`${nombreComprador} agregaste este producto a tu carrito`);
-                        } else {
-                            alert(`${nombreComprador} agregaste ${prod__susp} mas a tu carrito`);
-                        }
-
-                        prod__susp++;
-
-                        return comprar__prod (nombreComprador);
-
-                    case transmision:
-                        if (prod__transm == 0) {
-                            alert(`${nombreComprador} agregaste este producto a tu carrito`);
-                        } else {
-                            alert(`${nombreComprador} agregaste ${prod__transm} mas a tu carrito`);
-                        }
-
-                        prod__transm++;
-
-                        return comprar__prod (nombreComprador);
-
-                    case horquilla:
-                        if (prod__horq == 0) {
-                            alert(`${nombreComprador} agregaste este producto a tu carrito`);
-                        } else {
-                            alert(`${nombreComprador} agregaste ${prod__horq} mas a tu carrito`);
-                        }
-
-                        prod__horq++;
-
-                        return comprar__prod (nombreComprador);
-
-                    case cuadro:
-                        if (prod__cuadro == 0) {
-                            alert(`${nombreComprador} agregaste este producto a tu carrito`);
-                        } else {
-                            alert(`${nombreComprador} agregaste ${prod__cuadro} mas a tu carrito`);
-                        }
-
-                        prod__cuadro++;
-
-                        return comprar__prod (nombreComprador);
-
-                    default:
-                        alert('Esta opcion no existe');
-
-                        return comprar__prod (nombreComprador);
-
-                }
-
-            }
-
-        }  
-
-    } while (productos_tienda !== 'X');
-
-    alert(`${nombreComprador} agregaste ${prod} productos a tu carrito ` + '\n' + 'Gracias!');
-
+    alert(mensaje);
 }
 
-do {
-    primera__pantalla = prompt('Hola! Bienvenido a nuestra tienda, ¿Desea comprar un producto?? S/N');
+function encontrarProdPorNombre(producto) {
+    const prodEncontrado = prodTienda.find(prod => prod.producto === producto);
 
-    if (primera__pantalla !== 'N') {
-
-        nombreComprador = prompt('Ingrese su nombre: ');
-
-        if (typeof nombreComprador !== 'string') {
-            alert('El nombre no es valido!')
-            nombreComprador = prompt('Ingrese su nombre: ');
-        } else {
-            comprar__prod(nombreComprador);
-            
-        }
-
-    }else {
-        alert ('Hasta pronto!');
+    if (prodEncontrado) {
+    return prodEncontrado;
+    } else {
+    return null;
     }
+}
 
-} while (primera__pantalla !== 'N');
+function filtrarProdPorPrecio(min, max) {
+    const prodFiltrados = prodTienda.filter(prod => prod.precio >= min && prod.precio <= max);
+    return prodFiltrados;
+}
 
-alert('Gracias por visitar nuestra tienda')
+// Entrada de datos del cliente
+const prodCliente = parseFloat(prompt("1: Horquilla, 2:Suspension, 3:Transmision, 4:Cuadro, Ingrese el numero del producto que desea comprar:"));
+
+// Búsqueda de producto
+const prodElegido = encontrarProdPorNombre(prodCliente);
+
+// Mostrar resultados
+if (prodElegido) {
+    const precioProd = prodElegido.precio ;
+    alert(`Has elegido un/una ${prodElegido.producto}. El costo es de ${precioProd.toFixed(2)} pesos.`);
+} else {
+    alert("Lo siento, no tenemos ese producto disponible.");
+}
+
+// Otra compra
+let otraCompra = prompt("¿Desea comprar algo más? (S/N)").toLowerCase();
+
+if (otraCompra === "S") {
+  mostrarProdTienda(); // Mostrar productos disponibles
+
+  // Entrada de datos del cliente para la nueva compra
+    const prodClienteNuevo = parseFloat(prompt("Ingresa el nombre del producto deseado para tu nueva compra:"));
+
+  // Búsqueda de pesa rusa para la nueva compra
+    const prodElegidoNuevo = encontrarProdPorNombre(prodClienteNuevo);
+
+  // Mostrar resultados para la nueva compra
+    if (prodElegidoNuevo) {
+    const precioNuevo = prodElegidoNuevo.precio ; 
+    alert(`Has elegido un/una ${pesaElegidaNueva.peso}. El costo es de ${precioNuevo.toFixed(2)} pesos.`);
+    alert("Gracias por comprar.");
+    } else {
+    alert("Lo siento, no tenemos ese producto disponible.");
+    }
+}   else {
+    alert("Gracias por comprar.");
+}
