@@ -1,0 +1,83 @@
+[
+    {
+        "id": "horquillas-01",
+        "titulo": "Horquilla RS",
+        "imagen": "./img/HRS.jpg",
+        "categoria": {
+            "nombre": "Horquillas",
+            "id": "Horquillas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "horquilla-04",
+        "titulo": "Horquilla BS",
+        "imagen": "./img/HBS.jpg",
+        "categoria": {
+            "nombre": "Horquillas",
+            "id": "Horquillas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "horquilla-07",
+        "titulo": "Horquilla SR",
+        "imagen": "./img/HSR.jpg",
+        "categoria": {
+            "nombre": "Horquillas",
+            "id": "Horquillas"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "caudros-02",
+        "titulo": "Cuadro SP",
+        "imagen": "./img/CSP.jpg",
+        "categoria": {
+            "nombre": "Cuadros",
+            "id": "Cuadros"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "cuadro-05",
+        "titulo": "Cuadro RW",
+        "imagen": "./img/CRW.jpg",
+        "categoria": {
+            "nombre": "Cuadros",
+            "id": "Cuadros"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "cuadro-08",
+        "titulo": "Cuadro TR",
+        "imagen": "./img/CTR.png",
+        "categoria": {
+            "nombre": "Cuadros",
+            "id": "Cuadros"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "transmisiones-03",
+        "titulo": "Transmision XT",
+        "imagen": "./img/TXT.jpg",
+        "categoria": {
+            "nombre": "Transmisiones",
+            "id": "Transmisiones"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "transmision-06",
+        "titulo": "Transmision SH",
+        "imagen": "./img/TSH.jpg",
+        "categoria": {
+            "nombre": "Transmisiones",
+            "id": "Transmisiones"
+        },
+        "precio": 1000
+    }
+    
+]

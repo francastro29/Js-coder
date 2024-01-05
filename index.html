@@ -1,18 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Segunda pre-entrega Francisco Castro</title>
+    <title>Castro BIKESHOP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header>
-        <h1>Tieda de repuestos</h1>
-        <h2>De Francisco Castro</h2>
-    </header>
 
+    <div class="wrapper">
+        <header class="header-mobile">
+            <h1 class="logo">Castro BIKESHOP</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <h1 class="logo">Castro BIKESHOP</h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Productos</button>
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">Castro BIKESHOP</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos"><div class="producto">
+            <img class="producto-imagen" src="./img/HRS.jpg" alt="Horquilla RS">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Horquilla RS</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="horquillas-01">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/CSP.jpg" alt="Cuadro SP">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Cuadro SP</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="cuadros-02">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/TXT.jpg" alt="Transmision XT">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Transmision XT</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="transmisiones-03">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/HBS.jpg" alt="Horquilla BS">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Horquilla BS</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="horquilla-04">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/CRW.jpg" alt="Cuadro RW">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Cuadro RW</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="cuadro-05">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/TSH.jpg" alt="Transmision SH">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Transmision SH</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="transmision-06">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/HSR.jpg" alt="Horquilla SR">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Horquilla SR</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="horquilla-07">Agregar</button>
+            </div>
+        </div><div class="producto">
+            <img class="producto-imagen" src="./img/CTR.png" alt="Cuadro TR">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">Cuadro TR</h3>
+                <p class="producto-precio">$1000</p>
+                <button class="producto-agregar" id="cuadro-08">Agregar</button>
+            </div>
+        </div>
+        </div></div>
+        </main>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/menu.js"></script>
 
-    <script src="./app.js"></script>
+<img id="translator-icon" src="chrome-extension://pmlpcplomjofbnlcihpacmcaahellokg/icons/icon-128.png" style="display: none;"><div id="translator-container" style="display: none;">
+<div class="rapid-header">
+  <img сlass="rapid-logo" src="chrome-extension://pmlpcplomjofbnlcihpacmcaahellokg/icons/logo.svg">
+  <img сlass="rapid-icon" id="rapid-copy" src="chrome-extension://pmlpcplomjofbnlcihpacmcaahellokg/icons/copy.svg">
+</div><div id="rapid-text-wrapper"><span></span></div>
+
+<div class="rapid-footer">
+  <span id="rapid-first-language">ENG</span>
+  <img id="rapid-arrow-icon" src="chrome-extension://pmlpcplomjofbnlcihpacmcaahellokg/icons/r-arrow.svg">
+  <span id="rapid-second-language">FRN</span>
+</div></div>
 </body>
 </html>
